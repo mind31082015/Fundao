@@ -132,6 +132,8 @@
     </Compile>
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Photo.cs" />
+    <Compile Include="Models\PhotoFundaoContext.cs" />
+    <Compile Include="Models\PhotoFundaoInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
