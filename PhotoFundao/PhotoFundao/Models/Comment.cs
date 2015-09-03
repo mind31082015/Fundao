@@ -12,6 +12,7 @@ namespace PhotoFundao.Models
         public string UserName { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         public virtual Photo Photo { get; set; }
 
     }

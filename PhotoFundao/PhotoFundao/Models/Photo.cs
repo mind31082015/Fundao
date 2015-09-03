@@ -14,6 +14,7 @@ namespace PhotoFundao.Models
         [DisplayName("Picture")]
         public byte[] PhotoFile { get; set; }
         [DataType(DataType.MultilineText)]
+        public byte[] ImageMimeType { get; set; }
         public string Description { get; set; }
         [DataType(DataType.DateTime)]
         [DisplayName("Created Date")]
