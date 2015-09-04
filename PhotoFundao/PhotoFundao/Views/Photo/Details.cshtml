@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhotoFile)
+            <img src=" @Url.Action("GetImage", "Photo", new { id = Model.PhotoID })" width="800px" />
         </dd>
 
         <dt>

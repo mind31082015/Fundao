@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            <img src=" @Url.Action("GetImage", "Photo", new { id=item.PhotoID })" />
+            <img src=" @Url.Action("GetImage", "Photo", new { id=item.PhotoID })" width="50px" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ImageMimeType)
