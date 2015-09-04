@@ -46,15 +46,25 @@ namespace PhotoFundao.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PhotoID,Title,PhotoFile,ImageMimeType,Description,CreatedDate,UserName")] Photo photo)
+        public ActionResult Create([Bind(Include = "PhotoID,Title,PhotoFile,ImageMimeType,Description,CreatedDate,UserName")] Photo photo, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
+                photo.CreatedDate = DateTime.Now;
+
+                if (image != null)
+                {
+                    photo.ImageMimeType = image.ContentType;
+
+                    var data = new byte[image.ContentLength];
+                    image.InputStream.Read(data, 0, data.Length);
+                    photo.PhotoFile = data;
+                }
                 db.Photos.Add(photo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+           
             return View(photo);
         }
 
@@ -110,9 +120,38 @@ namespace PhotoFundao.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Photo photo = db.Photos.Find(id);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
             db.Photos.Remove(photo);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public FileContentResult GetImage(int id)
+        {
+            var photo = db.Photos.Find(id);
+            if (photo == null)
+            {
+                return null;
+            }
+
+            return new FileContentResult(photo.PhotoFile, photo.ImageMimeType);
+        }
+
+        public ActionResult Display(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Photo photo = db.Photos.Find(id);
+            if (photo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(photo);
         }
 
         protected override void Dispose(bool disposing)
