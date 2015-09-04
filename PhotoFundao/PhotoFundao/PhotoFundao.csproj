@@ -178,6 +178,7 @@
     <Content Include="Views\Photo\Details.cshtml" />
     <Content Include="Views\Photo\Edit.cshtml" />
     <Content Include="Views\Photo\Index.cshtml" />
+    <Content Include="Views\Photo\Display.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
