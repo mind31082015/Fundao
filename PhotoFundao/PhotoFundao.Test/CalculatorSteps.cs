@@ -21,7 +21,7 @@ namespace PhotoFundao.Test
             var calculator = Bag.Calculator as Calculator;
             calculator.EnterNumber(number);
         }
-        
+
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
@@ -29,7 +29,7 @@ namespace PhotoFundao.Test
             var result = calculator.Add();
             Bag.Result = result;
         }
-        
+
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
         {
@@ -37,5 +37,30 @@ namespace PhotoFundao.Test
 
             Assert.AreEqual(expectedResult, result);
         }
+
+        [When(@"I press subtract")]
+        public void WhenIPressSubtract()
+        {
+            var calculator = Bag.Calculator as Calculator;
+            var result = calculator.Subtract();
+            Bag.Result = result;
+        }
+
+        [When(@"I press multiply")]
+        public void WhenIPressMultiply()
+        {
+            var calculator = Bag.Calculator as Calculator;
+            var result = calculator.Multiply();
+            Bag.Result = result;
+        }
+
+        [When(@"I press divide")]
+        public void WhenIPressDivide()
+        {
+            var calculator = Bag.Calculator as Calculator;
+            var result = calculator.Divide();
+            Bag.Result = result;
+        }
+
     }
 }
