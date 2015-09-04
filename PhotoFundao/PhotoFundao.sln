@@ -5,7 +5,11 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFundao", "PhotoFundao\PhotoFundao.csproj", "{02146013-5054-4DA1-BBA5-980A2CCD24F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFundaoTest", "PhotoFundaoTest\PhotoFundaoTest.csproj", "{84996C95-56F4-40C3-8182-74810865DD0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFundao.Domain", "PhotoFundao.Domain\PhotoFundao.Domain.csproj", "{1A4A6464-61A6-4143-9CE7-4E41EF1A893E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFundao.Test.Common", "PhotoFundao.Test.Common\PhotoFundao.Test.Common.csproj", "{62956DF0-232F-4FFD-9274-6152A48B4930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoFundao.Test", "PhotoFundao.Test\PhotoFundao.Test.csproj", "{84996C95-56F4-40C3-8182-74810865DD0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +21,14 @@ Global
 		{02146013-5054-4DA1-BBA5-980A2CCD24F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02146013-5054-4DA1-BBA5-980A2CCD24F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02146013-5054-4DA1-BBA5-980A2CCD24F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4A6464-61A6-4143-9CE7-4E41EF1A893E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4A6464-61A6-4143-9CE7-4E41EF1A893E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4A6464-61A6-4143-9CE7-4E41EF1A893E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4A6464-61A6-4143-9CE7-4E41EF1A893E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62956DF0-232F-4FFD-9274-6152A48B4930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62956DF0-232F-4FFD-9274-6152A48B4930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62956DF0-232F-4FFD-9274-6152A48B4930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62956DF0-232F-4FFD-9274-6152A48B4930}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84996C95-56F4-40C3-8182-74810865DD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84996C95-56F4-40C3-8182-74810865DD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84996C95-56F4-40C3-8182-74810865DD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU

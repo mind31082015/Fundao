@@ -1,7 +1,9 @@
 ﻿using NUnit.Framework;
+using PhotoFundao.Domain;
 using TechTalk.SpecFlow;
+using static PhotoFundao.Test.Common.TestHelper;
 
-namespace PhotoFundaoTest
+namespace PhotoFundao.Test
 {
     [Binding]
     public class CalculatorSteps
