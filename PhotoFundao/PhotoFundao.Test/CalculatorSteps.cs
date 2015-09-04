@@ -18,14 +18,14 @@ namespace PhotoFundao.Test
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int number)
         {
-            var calculator = Bag.Calculator;
+            var calculator = Bag.Calculator as Calculator;
             calculator.EnterNumber(number);
         }
         
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-            var calculator = Bag.Calculator;
+            var calculator = Bag.Calculator as Calculator;
             var result = calculator.Add();
             Bag.Result = result;
         }
