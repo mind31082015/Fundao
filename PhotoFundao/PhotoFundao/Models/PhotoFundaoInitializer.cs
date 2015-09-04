@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
+using System.Web;
 
 namespace PhotoFundao.Models
 {
@@ -15,7 +17,7 @@ namespace PhotoFundao.Models
                 Title = "Test Photo",
                 Description = "Photo bunitinha!",
                 UserName = "NaokiSato",
-                //PhotoFile = getFileBits("")
+                PhotoFile = getFileBytes("/Images/flower.JPG"),
                 ImageMimeType = "image/jpeg",
                 CreatedDate = DateTime.Now
             };
@@ -35,6 +37,17 @@ namespace PhotoFundao.Models
             photos.ForEach(x => context.Photos.Add(x));
 
             context.SaveChanges();
+        }
+
+        private byte[] getFileBytes(string path)
+        {
+            FileStream fileOnDisk = new FileStream(HttpRuntime.AppDomainAppPath + path, FileMode.Open);
+            byte[] fileBytes;
+            using (BinaryReader br = new BinaryReader(fileOnDisk))
+            {
+                fileBytes = br.ReadBytes((int)fileOnDisk.Length);
+            }
+            return fileBytes;
         }
     }
 }
