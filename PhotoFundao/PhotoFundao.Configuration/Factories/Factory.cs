@@ -10,7 +10,7 @@ namespace PhotoFundao.Configuration.Factories
         static Factory()
         {
             var module = new MainModule();
-            StandardKernel = new StandardKernel();
+            StandardKernel = new StandardKernel(module);
         }
 
         public static TEntity Get<TEntity>()
